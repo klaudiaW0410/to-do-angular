@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Task } from '../task';
 
 @Component({
   selector: 'app-add-task',
@@ -16,17 +17,19 @@ import { Component } from '@angular/core';
 })
 export class AddTaskComponent {
   newTask: string = '';
-  tasks: string[] = [];
+  tasks: Task[] = [];
 
   constructor() {}
 
   ngOnInit(): void {}
   addTask() {
     if (this.newTask.trim() !== '') {
-      console.log('Add new task:', this.newTask);
-      this.tasks.push(this.newTask);
+      const newTask: Task = {
+        name: this.newTask,
+        completed: false,
+      };
+      this.tasks.push(newTask);
       this.newTask = '';
-      console.log('List task after adding:', this.tasks);
     }
   }
 }
