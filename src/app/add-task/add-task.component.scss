@@ -1,0 +1,18 @@
+form {
+  display: flex;
+  justify-content: space-around;
+
+  input {
+    flex-grow: 0.5;
+    padding: 0.6rem;
+    border-radius: 0.8rem;
+    border: none;
+    background-color: rgb(190, 203, 191);
+  }
+  button {
+    padding: 0.6rem;
+    border-radius: 0.8rem;
+    border: none;
+    background-color: rgb(190, 203, 191);
+  }
+}

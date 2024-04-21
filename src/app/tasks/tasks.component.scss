@@ -1,8 +1,10 @@
-.task {
+.task-wrapper {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: rgb(245, 220, 163);
+  margin-top: 2rem;
+  background-color: rgb(111, 139, 113);
+  border-radius: 1rem;
   .icons-wrapper {
     display: flex;
     justify-content: space-around;
@@ -10,9 +12,12 @@
     gap: 10px;
 
     img.icon {
-      width: 25px;
-      height: 25px;
+      width: 20px;
+      height: 20px;
       cursor: pointer;
     }
   }
+}
+.task p.completed {
+  text-decoration: line-through;
 }

@@ -3,16 +3,20 @@ import { Task } from '../task';
 
 @Component({
   selector: 'app-add-task',
-  template: `<form action="">
-      <input
-        type="text"
-        placeholder=" add task"
-        [(ngModel)]="newTask"
-        name="newTask"
-      />
-      <button (click)="addTask()" type="button">Add task</button>
-    </form>
-    <app-tasks [tasks]="tasks"></app-tasks>`,
+  template: `
+    <div class="wrapper-add">
+      <form action="">
+        <input
+          type="text"
+          placeholder=" add task"
+          [(ngModel)]="newTask"
+          name="newTask"
+        />
+        <button (click)="addTask()" type="button">Add task</button>
+      </form>
+      <app-tasks [tasks]="tasks" class="task"></app-tasks>
+    </div>
+  `,
   styleUrls: ['./add-task.component.scss'],
 })
 export class AddTaskComponent {
@@ -27,6 +31,7 @@ export class AddTaskComponent {
       const newTask: Task = {
         name: this.newTask,
         completed: false,
+        className: '',
       };
       this.tasks.push(newTask);
       this.newTask = '';
